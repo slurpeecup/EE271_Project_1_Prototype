@@ -1,3 +1,0 @@
-C:/Users/z434/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/CMakeFiles/EE271_Project_1_Prototype.dir
-C:/Users/z434/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/z434/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/CMakeFiles/rebuild_cache.dir
