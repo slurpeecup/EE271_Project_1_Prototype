@@ -85,7 +85,7 @@ int game_over(struct board_elements* players)
     return FALSE;
 }
 
-void gameplay(int grid_size, int game_table[grid_size][grid_size],struct board_elements* players)
+void gameplay(int grid_size, int* game_table[grid_size][grid_size],struct board_elements* players)
 {
     printf("in game play\n");
     for (int row = 0; row< grid_size; row++)
@@ -106,26 +106,34 @@ void gameplay(int grid_size, int game_table[grid_size][grid_size],struct board_e
                     &game_table[row_forward][column_backward],
                     &game_table[row_forward][column],
                     &game_table[row_forward][column_forward],
-                    game_table[row][column]
+                    &game_table[row][column]
                 };
                 printf("in ray init\n");
-                if (game_table[row][column] == rabbit) {
+                if (&game_table[row][column] == rabbit) {
+                    printf("in ray init\n");
                     int decision;
-                    decision = play_rabbit(game_table, &players, ray);
+                    printf("in ray init\n");
+                    decision = play_rabbit(grid_size,game_table, players, ray);
+
+                    printf("in ray init\n");
                     if (decision >= FIGHT && decision < FIGHT + 8) {
+                        printf("in ray init\n");
                         int survival = rand() % 70;
+                        printf("in ray init\n");
                         if (survival > 50) {
+                            printf("in ray init\n");
                             ray[decision - FIGHT] = rabbit;
                         } else
+                            printf("in ray init\n");
                             players->rabbit_count--;
                     }//fight
                     decision = rabbit;
                     CURRENT_PLAYER = empty;
                 }
 
-                if (*CURRENT_PLAYER == lion) {
+                if (&CURRENT_PLAYER == lion) {
                     int decision;
-                    decision = play_lion(game_table, &players, ray);
+                    decision = play_lion(grid_size,game_table, players, ray);
                     if (decision >= FIGHT && decision < FIGHT + 8) {
                         int survival = rand() % 80;
                         if (survival > 20) {
@@ -141,10 +149,12 @@ void gameplay(int grid_size, int game_table[grid_size][grid_size],struct board_e
     printf("out game play\n");
 }
 
-int play_rabbit(int game_table[25][25],struct board_elements* players, int* ray)
+int play_rabbit(int grid_size, int* game_table[grid_size][grid_size],
+                struct board_elements* players, int* ray)
 {
     for (int i = 0; i<7;i++)
     {
+        printf("i'm in here");
         switch (ray[i])
         {
             case food:
@@ -156,9 +166,9 @@ int play_rabbit(int game_table[25][25],struct board_elements* players, int* ray)
 
                     for (int column = 0; column < 25; column++)
                     {
-                        if (game_table[row][column]==empty)
+                        if (*game_table[row][column]==empty)
                         {
-                            game_table[row][column] = rabbit;
+                            *game_table[row][column] = rabbit;
                             found = 1;
                             players->rabbit_count++;
                             break;
@@ -174,13 +184,14 @@ int play_rabbit(int game_table[25][25],struct board_elements* players, int* ray)
                 return FIGHT+i;
             case stone:
                 return STAY;
-            default:
-                return ray[rand()%7];
         }
+
     }
+    return ray[rand()%7];
 }
 
-int play_lion(int game_table[25][25],struct board_elements* players, int* ray)
+int play_lion(int grid_size, int* game_table[grid_size][grid_size],
+              struct board_elements* players, int* ray)
         {
             for (int i = 0; i<7;i++)
             {
@@ -195,9 +206,9 @@ int play_lion(int game_table[25][25],struct board_elements* players, int* ray)
 
                             for (int column = 0; column < 25; column++)
                             {
-                                if (game_table[row][column]==empty)
+                                if (*game_table[row][column]==empty)
                                 {
-                                    game_table[row][column] = rabbit;
+                                    *game_table[row][column] = rabbit;
                                     found = 1;
                                     players->rabbit_count++;
                                     break;
@@ -213,9 +224,7 @@ int play_lion(int game_table[25][25],struct board_elements* players, int* ray)
                         return ray[i];//goto
                     case stone:
                         return STAY;
-                    default:
-                        return ray[rand()%7];
                 }
             }
-
+            return ray[rand()%7];
         }

@@ -8,7 +8,6 @@ enum board_contents {empty = 0, stone = 1, food = 2, rabbit = 3, lion = 4};
 
 struct board_elements
 {
-    int empty_count;
     int stone_count;
     int food_count;
     int rabbit_count;
@@ -21,10 +20,12 @@ void board_init(int grid_size, int game_table[grid_size][grid_size],struct board
 
 int game_over(struct board_elements* players);
 
-void gameplay(int grid_size, int game_table[grid_size][grid_size],struct board_elements* players);
+void gameplay(int grid_size, int* game_table[grid_size][grid_size],struct board_elements* players);
 
-int play_rabbit(int game_table[25][25],struct board_elements* players, int* ray);
-int play_lion(int game_table[25][25],struct board_elements* players, int* ray);
+int play_rabbit(int grid_size, int* game_table[grid_size][grid_size],
+                struct board_elements* players, int* ray);
+int play_lion(int grid_size, int* game_table[grid_size][grid_size],
+              struct board_elements* players, int* ray);
 
 
 #endif //HW1_GAME_H

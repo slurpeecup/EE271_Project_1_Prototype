@@ -9,13 +9,14 @@
 int main()
 {
     int game_table[25][25];
+    int grid_size = 25;
     struct board_elements players = {0,0,0,0,0};
 
-    board_init(25, game_table, &players);
+    board_init(grid_size, game_table, &players);
 
     while (game_over(&players)==FALSE)
     {
-        gameplay(25,game_table[25][25],&players);
+        gameplay(grid_size,game_table[grid_size][grid_size],&players);
     }
     printf("That's all folks!");
 return 0;
