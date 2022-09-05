@@ -22,10 +22,10 @@ int game_over(struct board_elements* players);
 
 void gameplay(int grid_size, int game_table[grid_size][grid_size],struct board_elements* players);
 
-int play_rabbit(int grid_size, int game_table[grid_size][grid_size],
-                struct board_elements* players, int** ray);
-int play_lion(int grid_size, int game_table[grid_size][grid_size],
-              struct board_elements* players, int** ray);
+int* play_rabbit(int grid_size, int game_table[grid_size][grid_size],
+                struct board_elements* players, int** ray, int* interaction_status);
+int* play_lion(int grid_size, int game_table[grid_size][grid_size],
+               struct board_elements* players, int** ray, int* interaction_status);
 
 
 #endif //HW1_GAME_H

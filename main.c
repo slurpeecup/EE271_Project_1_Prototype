@@ -20,11 +20,11 @@ int main()
 
  printf("bruh\n");
 
-   do
+    while (game_over(&players)==FALSE)
    {
        gameplay(grid_size, game_table, &players);
-
-   } while (game_over(&players)==FALSE);
+       printf("If this calls gameplay again\n\n\n\n\n\n\n\n\n\n");
+   }
 
     printf("That's all folks!");
 return 0;
