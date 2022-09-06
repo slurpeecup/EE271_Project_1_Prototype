@@ -233,9 +233,11 @@ int *play_rabbit(int grid_size, int game_table[grid_size][grid_size],
                     while (found != 1) {
                         int rand_spot_x = rand() % grid_size;
                         int rand_spot_y = rand() % grid_size;
+                        printf("broke here 1");
 
-                        if (game_table[rand_spot_x][rand_spot_y] <=10 )
+                        if (game_table[rand_spot_x][rand_spot_y] <= 11 )
                         {
+                            printf("broke here 2");
                             found = 1;
                             game_table[rand_spot_y][rand_spot_y] = rabbit;
 
@@ -286,9 +288,10 @@ int *play_lion(int grid_size, int game_table[grid_size][grid_size],
                     while (found != 1) {
                         int rand_spot_x = rand() % grid_size;
                         int rand_spot_y = rand() % grid_size;
-
-                        if (game_table[rand_spot_x][rand_spot_y] <=10 )
+                        printf("broke here 3");
+                        if (game_table[rand_spot_x][rand_spot_y] >=11 )
                         {
+                            printf("broke here 4");
                             found = 1;
                             game_table[rand_spot_y][rand_spot_y] = lion;
 
