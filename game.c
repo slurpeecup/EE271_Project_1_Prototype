@@ -104,8 +104,8 @@ void gameplay(int grid_size, int game_table[grid_size][grid_size], struct board_
                     //mandating death from hunger
                     int death_from_hunger = rand() % 100;
                     if (death_from_hunger > 80) {
-                        game_table[row][column] = empty;
                         players->rabbit_count--;
+                        game_table[row][column] = empty;
                         printf("Rabbit died from hunger\n");
                         continue;
                     }
@@ -120,12 +120,13 @@ void gameplay(int grid_size, int game_table[grid_size][grid_size], struct board_
                     if (interaction_status == FIGHT) {
                         int survival = rand() % 70;
                         if (survival > 50) {
-                            *ray[*decision] = rabbit;
-                            printf("Rabbit won the fight and moved to %d\n", *ray[*decision]);
-                        } else
+                            *decision = rabbit;
+                            printf("Rabbit won the fight and moved to %p\n", ray[*decision]);
+                        } else {
                             players->rabbit_count--;
-                        game_table[row][column] = empty;
-                        printf("Rabbit lost the fight\n");
+                            game_table[row][column] = empty;
+                            printf("Rabbit lost the fight\n");
+                        }
                     }//fight
 
                     if (interaction_status == MATE) {
@@ -143,7 +144,6 @@ void gameplay(int grid_size, int game_table[grid_size][grid_size], struct board_
 
                     if (interaction_status != STAY)
                         game_table[row][column] = empty;
-                    printf("tripped\n");
                 }
 
 
@@ -163,15 +163,17 @@ void gameplay(int grid_size, int game_table[grid_size][grid_size], struct board_
                 decision = play_lion(grid_size, game_table, players, ray, &interaction_status);
 
 
-                if (*decision == FIGHT) {
+                if (interaction_status == FIGHT) {
                     int survival = rand() % 80;
                     if (survival > 20) {
-                        *ray[*decision] = lion;
-                        printf("Lion won the fight and moved to %d\n", *ray[*decision]);
-                    } else
+                        *decision = lion;
+                        printf("Lion won the fight and moved to %p\n", ray[*decision]);
+                    } else {
                         players->lion_count--;
-                    printf("Lion lost the fight\n");
-                }
+                        game_table[row][column] = empty;
+                        printf("Lion lost the fight\n");
+                    }
+                    }
                 //fight
                 if (interaction_status == MATE) {
                     decision = move_away(ray);
