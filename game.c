@@ -29,9 +29,9 @@ void board_init(int grid_size, int game_table[grid_size][grid_size], struct boar
 
             enum board_contents fill_space = rand() % 14;
 
-            if (board_content_regulator(players, &fill_space) == TRUE) {
+            if (board_content_regulator(players, &fill_space) == TRUE)
                 game_table[row][column] = fill_space;
-            } else {
+             else {
                 game_table[row][column] = empty;
             }
         }
@@ -41,7 +41,6 @@ void board_init(int grid_size, int game_table[grid_size][grid_size], struct boar
 
 // function to ensure that the board is initialized in a way that is mostly playable.
 int board_content_regulator(struct board_elements *players, enum board_contents *fill_space) {
-    //  printf("in board content regulator\n");
     if (*fill_space < 10)
         *fill_space = empty;
     switch (*fill_space) {
@@ -82,24 +81,10 @@ int game_over(struct board_elements *players) {
     return FALSE;
 }
 
-/*
-void gameplay(int grid_size, int game_table[grid_size][grid_size],struct board_elements* players)
-{
-    for (int row = 0; row< grid_size; row++) {
-        for (int column = 0; column < grid_size; column++) {
-            printf("%d loop, element %d, value %d\n", row, column,game_table[row][column]);
-        }
-    }
-
-}
-*/
 
 void gameplay(int grid_size, int game_table[grid_size][grid_size], struct board_elements *players) {
-    printf("Coming up top\n");
     for (int row = 0; row < grid_size; row++) {
-        //    printf("First loop\n");
         for (int column = 0; column < grid_size; column++) {
-            //      printf("Second Loop\n");
 
             int *ray[] =
                     {
@@ -208,7 +193,7 @@ void gameplay(int grid_size, int game_table[grid_size][grid_size], struct board_
         }
     }
     printf("Rabbit count is currently: %d\n"
-           " Lion count is currently: %d\n",
+           "Lion count is currently:   %d\n",
            players->rabbit_count,
            players->lion_count);
 }
@@ -238,13 +223,11 @@ int *play_rabbit(int grid_size, int game_table[grid_size][grid_size],
 
                         if (game_table[rand_spot_x][rand_spot_y] >=11 )
                         {
-                            printf("1: %d 2: %d\n",rand_spot_x,rand_spot_y);
                             found = 1;
                             game_table[rand_spot_y][rand_spot_y] = rabbit;
 
                             printf("New baby rabbit\n");
                             players->rabbit_count++;
-                            printf("Rabbit count %d\n",players->rabbit_count);
                             break;
                         }
                     }
@@ -297,7 +280,6 @@ int *play_lion(int grid_size, int game_table[grid_size][grid_size],
 
                             printf("New baby lion\n");
                             players->lion_count++;
-                            printf("Lion count %d\n",players->lion_count);
                             break;
                         }
                     }
@@ -320,7 +302,6 @@ int *play_lion(int grid_size, int game_table[grid_size][grid_size],
 
 void print_grid(int grid_size, int game_table[grid_size][grid_size]) {
     for (int row = 0; row < grid_size; row++) {
-        //    printf("First loop\n");
         for (int column = 0; column < grid_size; column++) {
             switch(game_table[row][column]) {
                 case rabbit:
@@ -333,7 +314,7 @@ void print_grid(int grid_size, int game_table[grid_size][grid_size]) {
                     printf(" S ", 4);
                     break;
                 case food:
-                    printf(" R ", 4);
+                    printf(" F ", 4);
                     break;
                 default:
                     printf("   ", 4);

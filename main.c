@@ -17,11 +17,13 @@ int main()
     struct board_elements players = {0, 0, 0, 0};
 
     board_init(grid_size, game_table, &players);
+    printf("\nLet's begin.\n");
 
     while (game_over(&players) == FALSE) {
         print_grid(grid_size, game_table);
         gameplay(grid_size, game_table, &players);
     }
+
     printf("\nFinal Board.\n");
     print_grid(grid_size, game_table);
     printf("Simulation over.\n");
