@@ -119,7 +119,7 @@ void gameplay(int grid_size, int game_table[grid_size][grid_size], struct board_
                     //mandating death from hunger
                     int death_from_hunger = rand() % 100;
                     if (death_from_hunger > 80) {
-                        game_table[0][0] = empty;
+                        game_table[row][column] = empty;
                         players->rabbit_count--;
                         printf("Rabbit died from hunger\n");
                         continue;
@@ -129,7 +129,7 @@ void gameplay(int grid_size, int game_table[grid_size][grid_size], struct board_
                     int interaction_status = 0;
                     int *decision;
 
-                    decision = play_rabbit(grid_size, game_table[grid_size][grid_size], players, ray,
+                    decision = play_rabbit(grid_size, game_table, players, ray,
                                            &interaction_status);
 
                     if (interaction_status == FIGHT) {
@@ -139,6 +139,7 @@ void gameplay(int grid_size, int game_table[grid_size][grid_size], struct board_
                             printf("Rabbit won the fight and moved to %d\n", *ray[*decision]);
                         } else
                             players->rabbit_count--;
+                        game_table[row][column] = empty;
                         printf("Rabbit lost the fight\n");
                     }//fight
 
@@ -157,6 +158,7 @@ void gameplay(int grid_size, int game_table[grid_size][grid_size], struct board_
 
                     if (interaction_status != STAY)
                         game_table[row][column] = empty;
+                    printf("tripped\n");
                 }
 
 
@@ -165,7 +167,7 @@ void gameplay(int grid_size, int game_table[grid_size][grid_size], struct board_
                 //dying from hunger
                 int death_from_hunger = rand() % 100;
                 if (death_from_hunger > 80) {
-                    game_table[0][0] = empty;
+                    game_table[row][column] = empty;
                     players->lion_count--;
                     printf("Lion died from hunger\n");
                     continue;
@@ -233,16 +235,16 @@ int *play_rabbit(int grid_size, int game_table[grid_size][grid_size],
                     while (found != 1) {
                         int rand_spot_x = rand() % grid_size;
                         int rand_spot_y = rand() % grid_size;
-                        printf("broke here 1");
 
-                        if (game_table[rand_spot_x][rand_spot_y] <= 11 )
+                        if (game_table[rand_spot_x][rand_spot_y] >=11 )
                         {
-                            printf("broke here 2");
+                            printf("1: %d 2: %d\n",rand_spot_x,rand_spot_y);
                             found = 1;
                             game_table[rand_spot_y][rand_spot_y] = rabbit;
 
                             printf("New baby rabbit\n");
                             players->rabbit_count++;
+                            printf("Rabbit count %d\n",players->rabbit_count);
                             break;
                         }
                     }
@@ -288,15 +290,14 @@ int *play_lion(int grid_size, int game_table[grid_size][grid_size],
                     while (found != 1) {
                         int rand_spot_x = rand() % grid_size;
                         int rand_spot_y = rand() % grid_size;
-                        printf("broke here 3");
                         if (game_table[rand_spot_x][rand_spot_y] >=11 )
                         {
-                            printf("broke here 4");
                             found = 1;
                             game_table[rand_spot_y][rand_spot_y] = lion;
 
                             printf("New baby lion\n");
                             players->lion_count++;
+                            printf("Lion count %d\n",players->lion_count);
                             break;
                         }
                     }
@@ -321,7 +322,23 @@ void print_grid(int grid_size, int game_table[grid_size][grid_size]) {
     for (int row = 0; row < grid_size; row++) {
         //    printf("First loop\n");
         for (int column = 0; column < grid_size; column++) {
-            printf("%*d ", 4, game_table[row][column]);
+            switch(game_table[row][column]) {
+                case rabbit:
+                    printf(" R ", 4);
+                    break;
+                case lion:
+                    printf(" L ", 4);
+                    break;
+                case stone:
+                    printf(" S ", 4);
+                    break;
+                case food:
+                    printf(" R ", 4);
+                    break;
+                default:
+                    printf("   ", 4);
+                    break;
+            }
         }
         printf("\n");
     }

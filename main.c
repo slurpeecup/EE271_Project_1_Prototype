@@ -22,7 +22,8 @@ int main()
         print_grid(grid_size, game_table);
         gameplay(grid_size, game_table, &players);
     }
-
+    printf("\nFinal Board.\n");
+    print_grid(grid_size, game_table);
     printf("Simulation over.\n");
     return 0;
 
