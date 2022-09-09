@@ -86,7 +86,7 @@ void gameplay(int grid_size, int game_table[grid_size][grid_size], struct board_
     for (int row = 0; row < grid_size; row++) {
         for (int column = 0; column < grid_size; column++) {
 
-            int *ray[] =
+            int *current_player_surroundings[] =
                     {
                             &game_table[ROW_BACKWARD][COLUMN_BACKWARD],
                             &game_table[ROW_BACKWARD][column],
@@ -98,115 +98,62 @@ void gameplay(int grid_size, int game_table[grid_size][grid_size], struct board_
                             &game_table[ROW_FORWARD][COLUMN_FORWARD],
                             &CURRENT_PLAYER
                     };
+          //  printf("next to play\n");
+                if (death_from_hunger(grid_size, game_table, row, column, players, current_player_surroundings))
+                {
+                   continue;
+                }
+
+            int interaction_status = 0;
+            int *decision;
+
+            if (enact_fight(grid_size,game_table,row,column,
+                            players,current_player_surroundings, &interaction_status, decision) == TRUE)
+            {
+                continue;
+            }
+            if (enact_mating(grid_size,game_table,row,column,
+                            players,current_player_surroundings, &interaction_status, decision) == TRUE)
+            {
+                continue;
+            }
+              //  printf("If this message is preceded by died hunger, that's a bad sign\n");
 
                 if ((game_table[row][column]) == rabbit) {
-
-                    //mandating death from hunger
-                    int death_from_hunger = rand() % 100;
-                    if (death_from_hunger > 80) {
-                        players->rabbit_count--;
-                        game_table[row][column] = empty;
-                        printf("Rabbit died from hunger\n");
-                        continue;
-                    }
-
-                    //initializing decision structure
-                    int interaction_status = 0;
-                    int *decision;
-
-                    decision = play_rabbit(grid_size, game_table, players, ray,
-                                           &interaction_status);
-
-                    if (interaction_status == FIGHT) {
-                        int survival = rand() % 70;
-                        if (survival > 50) {
-                            *decision = rabbit;
-                            printf("Rabbit won the fight and moved to %p\n", ray[*decision]);
-                        } else {
-                            players->rabbit_count--;
-                            game_table[row][column] = empty;
-                            printf("Rabbit lost the fight\n");
-                        }
-                    }//fight
-
-                    if (interaction_status == MATE) {
-                        decision = move_away(ray);
-                        if (decision == ray[8])
-                        {
-                            players->rabbit_count--;
-                            game_table[row][column] = empty;
-                            break;
-                        }
-                    }
-
+                    decision = play_rabbit(grid_size, game_table, players, current_player_surroundings,&interaction_status);
                     *decision = rabbit;
-
-
-                    if (interaction_status != STAY)
-                        game_table[row][column] = empty;
                 }
-
 
             if (game_table[row][column] == lion) {
-
-                //dying from hunger
-                int death_from_hunger = rand() % 100;
-                if (death_from_hunger > 80) {
-                    game_table[row][column] = empty;
-                    players->lion_count--;
-                    printf("Lion died from hunger\n");
-                    continue;
-                }
-
-                int interaction_status = 0;
-                int *decision;
-                decision = play_lion(grid_size, game_table, players, ray, &interaction_status);
-
-
-                if (interaction_status == FIGHT) {
-                    int survival = rand() % 80;
-                    if (survival > 20) {
-                        *decision = lion;
-                        printf("Lion won the fight and moved to %p\n", ray[*decision]);
-                    } else {
-                        players->lion_count--;
-                        game_table[row][column] = empty;
-                        printf("Lion lost the fight\n");
-                    }
-                    }
-                //fight
-                if (interaction_status == MATE) {
-                    decision = move_away(ray);
-                    if (decision == ray[8])
-                    {
-                        players->lion_count--;
-                        game_table[row][column] = empty;
-                        break;
-                    }
-                }
-
+                decision = play_lion(grid_size, game_table, players, current_player_surroundings, &interaction_status);
                 *decision = lion;
-
-
-                if (interaction_status != STAY)
-                    game_table[row][column] = empty;
             }
 
+            if (interaction_status != STAY)
+                game_table[row][column] = empty;
         }
+        printf("Rabbit count is currently: %d\n"
+               "Lion count is currently:   %d\n",
+               players->rabbit_count,
+               players->lion_count);
     }
-    printf("Rabbit count is currently: %d\n"
-           "Lion count is currently:   %d\n",
+    printf("End Round Rabbit count is currently: %d\n"
+           "End Round Lion count is currently:   %d\n",
            players->rabbit_count,
            players->lion_count);
 }
 
 int *play_rabbit(int grid_size, int game_table[grid_size][grid_size],
-                 struct board_elements *players, int **ray, int *interaction_status) {
-    for (int i = 0; i < 7; i++) {
-        switch (*ray[i]) {
+                 struct board_elements *players, int **current_player_surroundings, int *interaction_status) {
+
+    for (int target_surrounding_position = 0; target_surrounding_position < 7; target_surrounding_position++) {
+
+        switch (*current_player_surroundings[target_surrounding_position]) {
             case food:
-                printf("Rabbit ate food at %p\n", ray[i]);
-                return ray[i]; //goto
+                printf("Rabbit ate food at %p\n",
+                       current_player_surroundings[target_surrounding_position]);
+
+                return current_player_surroundings[target_surrounding_position]; //goto
 
             case rabbit:
                 printf("Rabbit found a mate!\n");
@@ -226,7 +173,7 @@ int *play_rabbit(int grid_size, int game_table[grid_size][grid_size],
                         if (game_table[rand_spot_x][rand_spot_y] >=11 )
                         {
                             found = 1;
-                            game_table[rand_spot_y][rand_spot_y] = rabbit;
+                            game_table[rand_spot_x][rand_spot_y] = rabbit;
 
                             printf("New baby rabbit\n");
                             players->rabbit_count++;
@@ -236,30 +183,32 @@ int *play_rabbit(int grid_size, int game_table[grid_size][grid_size],
 
                 }
             case empty:
-                printf("Rabbit moved to %p\n", ray[i]);
-                return ray[i];//goto
+                printf("Rabbit moved to %p\n",
+                       current_player_surroundings[target_surrounding_position]);
+                return current_player_surroundings[target_surrounding_position];//goto
             case lion:
                 printf("Rabbit chose to fight\n");
                 *interaction_status = FIGHT;
-                return ray[i];
+                return current_player_surroundings[target_surrounding_position];
             case stone:
-                printf("Rabbit stayed at %p\n", ray[i]);
+                printf("Rabbit stayed at %p\n",
+                       current_player_surroundings[target_surrounding_position]);
                 *interaction_status = STAY;
-                return ray[8];
+                return current_player_surroundings[8];
         }
 
     }
-    return ray[rand() % 7];
+    return current_player_surroundings[rand() % 7];
 }
 
 int *play_lion(int grid_size, int game_table[grid_size][grid_size],
-               struct board_elements *players, int **ray, int *interaction_status) {
-    for (int i = 0; i < 7; i++) {
-        switch (*ray[i]) {
+               struct board_elements *players, int **current_player_surroundings, int *interaction_status) {
+    for (int target_surrounding_position = 0; target_surrounding_position < 7; target_surrounding_position++) {
+        switch (*current_player_surroundings[target_surrounding_position]) {
             case rabbit:
                 printf("Lion chose to fight\n");
                 *interaction_status = FIGHT;
-                return ray[i];
+                return current_player_surroundings[target_surrounding_position];
 
             case lion:
                 printf("Lion found a mate!\n");
@@ -278,7 +227,7 @@ int *play_lion(int grid_size, int game_table[grid_size][grid_size],
                         if (game_table[rand_spot_x][rand_spot_y] >=11 )
                         {
                             found = 1;
-                            game_table[rand_spot_y][rand_spot_y] = lion;
+                            game_table[rand_spot_x][rand_spot_y] = lion;
 
                             printf("New baby lion\n");
                             players->lion_count++;
@@ -288,18 +237,18 @@ int *play_lion(int grid_size, int game_table[grid_size][grid_size],
 
                 }
             case food:
-                printf("Lion ate food at %p\n", ray[i]);
-                return ray[i];//goto
+                printf("Lion ate food at %p\n", current_player_surroundings[target_surrounding_position]);
+                return current_player_surroundings[target_surrounding_position];//goto
             case empty:
-                printf("Lion moved to %p\n", ray[i]);
-                return ray[i];//goto
+                printf("Lion moved to %p\n", current_player_surroundings[target_surrounding_position]);
+                return current_player_surroundings[target_surrounding_position];//goto
             case stone:
-                printf("Lion stayed at %p\n", ray[i]);
+                printf("Lion stayed at %p\n", current_player_surroundings[target_surrounding_position]);
                 *interaction_status = STAY;
-                return ray[8];
+                return current_player_surroundings[8];
         }
     }
-    return ray[rand() % 7];
+    return current_player_surroundings[rand() % 7];
 }
 
 void print_grid(int grid_size, int game_table[grid_size][grid_size]) {
@@ -307,19 +256,19 @@ void print_grid(int grid_size, int game_table[grid_size][grid_size]) {
         for (int column = 0; column < grid_size; column++) {
             switch(game_table[row][column]) {
                 case rabbit:
-                    printf(" R ", 4);
+                    printf(" R", 3);
                     break;
                 case lion:
-                    printf(" L ", 4);
+                    printf(" L", 3);
                     break;
                 case stone:
-                    printf(" S ", 4);
+                    printf(" S", 3);
                     break;
                 case food:
-                    printf(" F ", 4);
+                    printf(" F", 3);
                     break;
                 default:
-                    printf("   ", 4);
+                    printf("  ", 3);
                     break;
             }
         }
@@ -327,15 +276,105 @@ void print_grid(int grid_size, int game_table[grid_size][grid_size]) {
     }
 }
 
-int *move_away(int **ray) {
-    for (int i = 0; i < 7; i++) {
-        if (*ray[i] != rabbit
-            && *ray[i] != lion
-            && *ray[i] != stone) {
-            return ray[i];
+int *move_away(int **current_player_surroundings) {
+    for (int target_surrounding_position = 0; target_surrounding_position < 7; target_surrounding_position++) {
+        if (*current_player_surroundings[target_surrounding_position] != rabbit
+            && *current_player_surroundings[target_surrounding_position] != lion
+            && *current_player_surroundings[target_surrounding_position] != stone) {
+            return current_player_surroundings[target_surrounding_position];
         }
 
     }
     printf("An animal died of shock.");
-    return ray[8];
+    return current_player_surroundings[8];
+}
+
+int death_from_hunger(int grid_size, int game_table[grid_size][grid_size],int row, int column,
+                       struct board_elements *players, int **current_player_surroundings)
+{
+    if (game_table[row][column] == lion) {
+        //dying from hunger
+        int death_from_hunger = rand() % 100;
+        if (death_from_hunger > 80) {
+            game_table[row][column] = empty;
+            players->lion_count--;
+            printf("Lion died from hunger\n");
+            return TRUE;
+        }
+    }
+    if ((game_table[row][column]) == rabbit) {
+        //mandating death from hunger
+        int death_from_hunger = rand() % 100;
+        if (death_from_hunger > 80) {
+            players->rabbit_count--;
+            game_table[row][column] = empty;
+            printf("Rabbit died from hunger\n");
+            return TRUE;
+        }
+    }
+    return FALSE;
+}
+int enact_fight(int grid_size, int game_table[grid_size][grid_size],int row, int column,
+                      struct board_elements *players, int **current_player_surroundings, int* interaction_status,
+                              int* decision)
+{
+    if (*interaction_status != FIGHT)
+    {
+        return FALSE;
+    }
+    if (game_table[row][column] == lion) {
+        int survival = rand() % 80;
+        if (survival > 20) {
+            *decision = lion;
+            printf("Lion won the fight and moved to %p\n", current_player_surroundings[*decision]);
+        } else {
+            players->lion_count--;
+            game_table[row][column] = empty;
+            printf("Lion lost the fight\n");
+        }
+    }
+
+///////////////////////////////////////////////////////////////
+
+    if (game_table[row][column] == rabbit)
+    {
+        int survival = rand() % 70;
+        if (survival > 50) {
+            *decision = rabbit;
+            printf("Rabbit won the fight and moved to %p\n", current_player_surroundings[*decision]);
+        } else {
+            players->rabbit_count--;
+            game_table[row][column] = empty;
+            printf("Rabbit lost the fight\n");
+        }
+    }//fight
+
+    return TRUE;
+}
+
+int enact_mating(int grid_size, int game_table[grid_size][grid_size],int row, int column,
+                 struct board_elements *players, int **current_player_surroundings, int* interaction_status,
+                 int* decision)
+{
+if (interaction_status != MATE)
+{return FALSE;}
+    if (game_table[row][column] == lion) {
+        decision = move_away(current_player_surroundings);
+        if (decision == current_player_surroundings[8])
+        {
+            players->lion_count--;
+            game_table[row][column] = empty;
+            return TRUE;
+        }
+    }
+    ///////////////////////////////////////////////////////////////
+    if (game_table[row][column] == rabbit) {
+        decision = move_away(current_player_surroundings);
+        if (decision == current_player_surroundings[8])
+        {
+            players->rabbit_count--;
+            game_table[row][column] = empty;
+            return TRUE;
+        }
+    }
 }

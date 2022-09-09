@@ -34,4 +34,12 @@ void print_grid(int grid_size, int game_table[grid_size][grid_size]);
 
 int *move_away(int **ray);
 
+int death_from_hunger(int grid_size, int game_table[grid_size][grid_size],int row, int column,
+                       struct board_elements *players, int **ray);
+int enact_fight(int grid_size, int game_table[grid_size][grid_size],int row, int column,
+                struct board_elements *players, int **ray, int* interaction_status,
+                int* decision);
+int enact_mating(int grid_size, int game_table[grid_size][grid_size],int row, int column,
+                 struct board_elements *players, int **ray, int* interaction_status,
+                 int* decision);
 #endif //HW1_GAME_H
