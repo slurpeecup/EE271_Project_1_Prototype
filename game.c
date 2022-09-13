@@ -98,31 +98,38 @@ void gameplay(int grid_size, int game_table[grid_size][grid_size], struct board_
                             &game_table[ROW_FORWARD][COLUMN_FORWARD],
                             &CURRENT_PLAYER
                     };
-          //  printf("next to play\n");
-                if (death_from_hunger(grid_size, game_table, row, column, players, current_player_surroundings))
-                {
-                   continue;
-                }
+
+#if 1
+            /* this code is a relic of the debugging process, i choose to leave it as a message
+            * written in blood on the walls of this project*/
+                  if (CURRENT_PLAYER == lion || CURRENT_PLAYER == rabbit)
+                  {
+                      display_player_surroundings_coords (grid_size, game_table, row,column);
+                      display_player_surroundings_entities (grid_size, game_table, row,column);
+                  }
+#endif
+            if (death_from_hunger(grid_size, game_table, row, column, players, current_player_surroundings)) {
+                continue;
+            }
 
             int interaction_status = 0;
             int *decision;
 
-            if (enact_fight(grid_size,game_table,row,column,
-                            players,current_player_surroundings, &interaction_status, decision) == TRUE)
-            {
+            if (enact_fight(grid_size, game_table, row, column,
+                            players, current_player_surroundings, &interaction_status, decision) == TRUE) {
                 continue;
             }
-            if (enact_mating(grid_size,game_table,row,column,
-                            players,current_player_surroundings, &interaction_status, decision) == TRUE)
-            {
+            if (enact_mating(grid_size, game_table, row, column,
+                             players, current_player_surroundings, &interaction_status, decision) == TRUE) {
                 continue;
             }
-              //  printf("If this message is preceded by died hunger, that's a bad sign\n");
+            //  printf("If this message is preceded by died hunger, that's a bad sign\n");
 
-                if ((game_table[row][column]) == rabbit) {
-                    decision = play_rabbit(grid_size, game_table, players, current_player_surroundings,&interaction_status);
-                    *decision = rabbit;
-                }
+            if ((game_table[row][column]) == rabbit) {
+                decision = play_rabbit(grid_size, game_table, players, current_player_surroundings,
+                                       &interaction_status);
+                *decision = rabbit;
+            }
 
             if (game_table[row][column] == lion) {
                 decision = play_lion(grid_size, game_table, players, current_player_surroundings, &interaction_status);
@@ -131,16 +138,17 @@ void gameplay(int grid_size, int game_table[grid_size][grid_size], struct board_
 
             if (interaction_status != STAY)
                 game_table[row][column] = empty;
+
+#if 1
+            true_entity_counter( grid_size,  game_table, row,  column);
+            apparent_entity_counter( grid_size,  game_table, row,  column,
+           players);
+
+#endif
         }
-        printf("Rabbit count is currently: %d\n"
-               "Lion count is currently:   %d\n",
-               players->rabbit_count,
-               players->lion_count);
     }
-    printf("End Round Rabbit count is currently: %d\n"
-           "End Round Lion count is currently:   %d\n",
-           players->rabbit_count,
-           players->lion_count);
+
+
 }
 
 int *play_rabbit(int grid_size, int game_table[grid_size][grid_size],
@@ -356,7 +364,7 @@ int enact_mating(int grid_size, int game_table[grid_size][grid_size],int row, in
                  struct board_elements *players, int **current_player_surroundings, int* interaction_status,
                  int* decision)
 {
-if (interaction_status != MATE)
+if (*interaction_status != MATE)
 {return FALSE;}
     if (game_table[row][column] == lion) {
         decision = move_away(current_player_surroundings);
@@ -377,4 +385,78 @@ if (interaction_status != MATE)
             return TRUE;
         }
     }
+}
+
+//pure debug tool
+
+void display_player_surroundings_coords (int grid_size, int game_table[grid_size][grid_size],int row, int column)
+{
+    char player = '0';
+    if (game_table[row][column] == lion)
+    {
+        player = 'L';
+    }
+    if (game_table[row][column] == rabbit)
+    {
+        player = 'R';
+    }
+    printf("Current %c Surroundings\n"
+            "[%d][%d] [%d][%d] [%d][%d]\n"
+                  "[%d][%d] [%d][%d] [%d][%d]\n"
+                  "[%d][%d] [%d][%d] [%d][%d]\n",
+
+                 player, ROW_BACKWARD,COLUMN_BACKWARD,ROW_BACKWARD,column, ROW_BACKWARD, COLUMN_FORWARD,
+                  row, COLUMN_BACKWARD, row, column, row, COLUMN_FORWARD,
+                  ROW_FORWARD, COLUMN_BACKWARD, ROW_FORWARD, column, ROW_FORWARD,COLUMN_FORWARD);
+}
+
+void display_player_surroundings_entities (int grid_size, int game_table[grid_size][grid_size],int row, int column)
+{
+
+    char player = '0';
+    if (game_table[row][column] == lion)
+    {
+        player = 'L';
+    }
+    if (game_table[row][column] == rabbit)
+    {
+        player = 'R';
+    }
+
+    printf("Current %c Surroundings\n"
+           "[%d] [%d] [%d]\n"
+           "[%d] [%c] [%d]\n"
+           "[%d] [%d] [%d]\n",
+
+           player, game_table[ROW_BACKWARD][COLUMN_BACKWARD],game_table[ROW_FORWARD][column],game_table[ROW_BACKWARD][COLUMN_FORWARD],
+           game_table[row][COLUMN_BACKWARD],player,game_table[row][COLUMN_FORWARD],
+           game_table[ROW_FORWARD][COLUMN_BACKWARD],game_table[ROW_FORWARD][column],game_table[ROW_FORWARD][COLUMN_FORWARD]);
+
+}
+
+void true_entity_counter(int grid_size, int game_table[grid_size][grid_size],int row, int column)
+{
+    int lions = 0;
+    int rabbits = 0;
+    for (int row = 0; row < grid_size; row++) {
+        for (int column = 0; column < grid_size; column++)
+        {
+            if (game_table[row][column] == lion) lions++;
+            if (game_table[row][column] == rabbit) rabbits++;
+
+        }
+    }
+    printf("True count Lions | Rabbits: %d | %d\n",lions, rabbits);
+}
+
+void apparent_entity_counter(int grid_size, int game_table[grid_size][grid_size],int row, int column,
+                         struct board_elements *players)
+{
+    int lions = 0;
+    int rabbits = 0;
+
+    lions =  players->lion_count;
+    rabbits =  players->rabbit_count;
+
+   printf("Apparent count Lions | Rabbits: %d | %d\n",lions, rabbits);
 }

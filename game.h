@@ -42,4 +42,12 @@ int enact_fight(int grid_size, int game_table[grid_size][grid_size],int row, int
 int enact_mating(int grid_size, int game_table[grid_size][grid_size],int row, int column,
                  struct board_elements *players, int **ray, int* interaction_status,
                  int* decision);
+
+//debug tools
+void display_player_surroundings_entities (int grid_size, int game_table[grid_size][grid_size],int row, int column);
+void display_player_surroundings_coords (int grid_size, int game_table[grid_size][grid_size],int row, int column);
+void true_entity_counter(int grid_size, int game_table[grid_size][grid_size],int row, int column);
+void apparent_entity_counter(int grid_size, int game_table[grid_size][grid_size],int row, int column,
+                             struct board_elements *players);
+
 #endif //HW1_GAME_H
