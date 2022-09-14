@@ -35,7 +35,7 @@ void board_init(int grid_size, int game_table[grid_size][grid_size], struct boar
                 game_table[row][column] = empty;
             }
         }
-    }
+    }//
 }
 
 
