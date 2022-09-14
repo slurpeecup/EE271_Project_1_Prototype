@@ -9,9 +9,9 @@
 #define FALSE 0
 #define EXTINCT 0
 #define TRUE 1
-#define STAY 0x16
-#define FIGHT 0x32
-#define MATE 0x48
+#define STAY 500UL
+#define FIGHT 1000UL
+#define MATE 1500UL
 
 #define ROW_BACKWARD ((row-1 +grid_size)%grid_size)
 #define COLUMN_BACKWARD ((column-1+grid_size)%grid_size)
@@ -113,14 +113,16 @@ void gameplay(int grid_size, int game_table[grid_size][grid_size], struct board_
             }
 
             int interaction_status = 0;
-            int *decision;
+            int *decision=0;
 
-            if (enact_fight(grid_size, game_table, row, column,
-                            players, current_player_surroundings, &interaction_status, decision) == TRUE) {
+            if (interaction_status == FIGHT) {
+                enact_fight(grid_size, game_table, row, column,
+                            players, current_player_surroundings, &interaction_status, decision);
                 continue;
             }
-            if (enact_mating(grid_size, game_table, row, column,
-                             players, current_player_surroundings, &interaction_status, decision) == TRUE) {
+            if (interaction_status == MATE) {
+                enact_mating(grid_size, game_table, row, column,
+                             players, current_player_surroundings, &interaction_status, decision);
                 continue;
             }
             //  printf("If this message is preceded by died hunger, that's a bad sign\n");
@@ -140,6 +142,7 @@ void gameplay(int grid_size, int game_table[grid_size][grid_size], struct board_
                 game_table[row][column] = empty;
 
 #if 1
+            printf("Interaction status: %d\n", interaction_status);
             true_entity_counter( grid_size,  game_table, row,  column);
             apparent_entity_counter( grid_size,  game_table, row,  column,
            players);
