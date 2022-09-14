@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\EE271_PROJECT_1_PROTOTYPE.dir/objects.a
+C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\ar.exe qc CMakeFiles\EE271_PROJECT_1_PROTOTYPE.dir/objects.a @CMakeFiles\EE271_PROJECT_1_PROTOTYPE.dir\objects1.rsp
+C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\gcc.exe -g -Wl,--whole-archive CMakeFiles\EE271_PROJECT_1_PROTOTYPE.dir/objects.a -Wl,--no-whole-archive -o EE271_PROJECT_1_PROTOTYPE.exe -Wl,--out-implib,libEE271_PROJECT_1_PROTOTYPE.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\EE271_PROJECT_1_PROTOTYPE.dir\linklibs.rsp
