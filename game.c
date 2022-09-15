@@ -115,14 +115,13 @@ void gameplay(int grid_size, int game_table[grid_size][grid_size], struct board_
             int interaction_status = 0;
             int *decision=0;
 
-            if (interaction_status == FIGHT) {
-                enact_fight(grid_size, game_table, row, column,
-                            players, current_player_surroundings, &interaction_status, decision);
+            if (enact_fight(grid_size, game_table, row, column,
+                             players, current_player_surroundings, &interaction_status, decision)==TRUE) {
+
                 continue;
             }
-            if (interaction_status == MATE) {
-                enact_mating(grid_size, game_table, row, column,
-                             players, current_player_surroundings, &interaction_status, decision);
+            if (enact_mating(grid_size, game_table, row, column,
+                              players, current_player_surroundings, &interaction_status, decision) == TRUE) {
                 continue;
             }
             //  printf("If this message is preceded by died hunger, that's a bad sign\n");
@@ -238,9 +237,11 @@ int *play_lion(int grid_size, int game_table[grid_size][grid_size],
                         if (game_table[rand_spot_x][rand_spot_y] >=11 )
                         {
                             found = 1;
+                            printf("prior to mating \n");
+                            print_grid(grid_size, game_table);
                             game_table[rand_spot_x][rand_spot_y] = lion;
-
                             printf("New baby lion\n");
+                            print_grid(grid_size, game_table);
                             players->lion_count++;
                             break;
                         }

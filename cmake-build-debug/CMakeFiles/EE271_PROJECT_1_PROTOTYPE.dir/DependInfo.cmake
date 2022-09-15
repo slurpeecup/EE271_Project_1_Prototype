@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/Zaid/CLionProjects/EE271_Project_1_Prototype/game.c" "CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/game.c.obj" "gcc" "CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/game.c.obj.d"
-  "C:/Users/Zaid/CLionProjects/EE271_Project_1_Prototype/main.c" "CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/main.c.obj" "gcc" "CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/main.c.obj.d"
+  "C:/Users/z434/CLionProjects/EE271_Project_1_Prototype/game.c" "CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/game.c.obj" "gcc" "CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/game.c.obj.d"
+  "C:/Users/z434/CLionProjects/EE271_Project_1_Prototype/main.c" "CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/main.c.obj" "gcc" "CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/main.c.obj.d"
   )
 
 # Targets to which this target links.

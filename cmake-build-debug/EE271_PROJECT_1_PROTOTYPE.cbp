@@ -8,18 +8,18 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/Zaid/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug"/>
+				<Option working_dir="C:/Users/z434/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Zaid/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Zaid/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Zaid/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Zaid/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/z434/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/z434/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/z434/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/z434/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="EE271_PROJECT_1_PROTOTYPE">
-				<Option output="C:/Users/Zaid/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/EE271_PROJECT_1_PROTOTYPE.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Zaid/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug"/>
+				<Option output="C:/Users/z434/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/EE271_PROJECT_1_PROTOTYPE.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/z434/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -30,15 +30,15 @@
 					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Zaid/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 EE271_PROJECT_1_PROTOTYPE"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Zaid/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Zaid/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Zaid/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/z434/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 EE271_PROJECT_1_PROTOTYPE"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/z434/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/z434/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/z434/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="EE271_PROJECT_1_PROTOTYPE/fast">
-				<Option output="C:/Users/Zaid/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/EE271_PROJECT_1_PROTOTYPE.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Zaid/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug"/>
+				<Option output="C:/Users/z434/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/EE271_PROJECT_1_PROTOTYPE.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/z434/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -49,43 +49,43 @@
 					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Zaid/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 EE271_PROJECT_1_PROTOTYPE/fast"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Zaid/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Zaid/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Zaid/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/z434/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 EE271_PROJECT_1_PROTOTYPE/fast"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/z434/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/z434/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/z434/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/Zaid/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug"/>
+				<Option working_dir="C:/Users/z434/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Zaid/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Zaid/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Zaid/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Zaid/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/z434/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/z434/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/z434/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/z434/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/Zaid/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug"/>
+				<Option working_dir="C:/Users/z434/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Zaid/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Zaid/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Zaid/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Zaid/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/z434/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/z434/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/z434/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/z434/CLionProjects/EE271_Project_1_Prototype/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/Zaid/CLionProjects/EE271_Project_1_Prototype/game.c">
+		<Unit filename="C:/Users/z434/CLionProjects/EE271_Project_1_Prototype/game.c">
 			<Option target="EE271_PROJECT_1_PROTOTYPE"/>
 		</Unit>
-		<Unit filename="C:/Users/Zaid/CLionProjects/EE271_Project_1_Prototype/game.h">
+		<Unit filename="C:/Users/z434/CLionProjects/EE271_Project_1_Prototype/game.h">
 			<Option target="EE271_PROJECT_1_PROTOTYPE"/>
 		</Unit>
-		<Unit filename="C:/Users/Zaid/CLionProjects/EE271_Project_1_Prototype/main.c">
+		<Unit filename="C:/Users/z434/CLionProjects/EE271_Project_1_Prototype/main.c">
 			<Option target="EE271_PROJECT_1_PROTOTYPE"/>
 		</Unit>
-		<Unit filename="C:/Users/Zaid/CLionProjects/EE271_Project_1_Prototype/CMakeLists.txt">
+		<Unit filename="C:/Users/z434/CLionProjects/EE271_Project_1_Prototype/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

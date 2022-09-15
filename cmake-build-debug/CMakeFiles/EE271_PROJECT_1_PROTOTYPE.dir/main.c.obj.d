@@ -1,5 +1,5 @@
 CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/main.c.obj: \
- C:\Users\Zaid\CLionProjects\EE271_Project_1_Prototype\main.c \
+ C:\Users\z434\CLionProjects\EE271_Project_1_Prototype\main.c \
  C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/x86_64-w64-mingw32/include/stdio.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/x86_64-w64-mingw32/include/corecrt.h \
@@ -26,4 +26,4 @@ CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/main.c.obj: \
  C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/x86_64-w64-mingw32/include/sys/timeb.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/x86_64-w64-mingw32/include/pthread_time.h \
- C:\Users\Zaid\CLionProjects\EE271_Project_1_Prototype\game.h
+ C:\Users\z434\CLionProjects\EE271_Project_1_Prototype\game.h

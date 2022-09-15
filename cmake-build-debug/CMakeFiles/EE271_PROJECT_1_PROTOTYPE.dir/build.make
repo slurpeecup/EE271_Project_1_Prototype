@@ -52,10 +52,10 @@ RM = "C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Zaid\CLionProjects\EE271_Project_1_Prototype
+CMAKE_SOURCE_DIR = C:\Users\z434\CLionProjects\EE271_Project_1_Prototype
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Zaid\CLionProjects\EE271_Project_1_Prototype\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\z434\CLionProjects\EE271_Project_1_Prototype\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/depend.make
@@ -71,30 +71,30 @@ include CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/flags.make
 CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/main.c.obj: CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/flags.make
 CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/main.c.obj: ../main.c
 CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/main.c.obj: CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Zaid\CLionProjects\EE271_Project_1_Prototype\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/main.c.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/main.c.obj -MF CMakeFiles\EE271_PROJECT_1_PROTOTYPE.dir\main.c.obj.d -o CMakeFiles\EE271_PROJECT_1_PROTOTYPE.dir\main.c.obj -c C:\Users\Zaid\CLionProjects\EE271_Project_1_Prototype\main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\z434\CLionProjects\EE271_Project_1_Prototype\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/main.c.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/main.c.obj -MF CMakeFiles\EE271_PROJECT_1_PROTOTYPE.dir\main.c.obj.d -o CMakeFiles\EE271_PROJECT_1_PROTOTYPE.dir\main.c.obj -c C:\Users\z434\CLionProjects\EE271_Project_1_Prototype\main.c
 
 CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/main.c.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Zaid\CLionProjects\EE271_Project_1_Prototype\main.c > CMakeFiles\EE271_PROJECT_1_PROTOTYPE.dir\main.c.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\z434\CLionProjects\EE271_Project_1_Prototype\main.c > CMakeFiles\EE271_PROJECT_1_PROTOTYPE.dir\main.c.i
 
 CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/main.c.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Zaid\CLionProjects\EE271_Project_1_Prototype\main.c -o CMakeFiles\EE271_PROJECT_1_PROTOTYPE.dir\main.c.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\z434\CLionProjects\EE271_Project_1_Prototype\main.c -o CMakeFiles\EE271_PROJECT_1_PROTOTYPE.dir\main.c.s
 
 CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/game.c.obj: CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/flags.make
 CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/game.c.obj: ../game.c
 CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/game.c.obj: CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Zaid\CLionProjects\EE271_Project_1_Prototype\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/game.c.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/game.c.obj -MF CMakeFiles\EE271_PROJECT_1_PROTOTYPE.dir\game.c.obj.d -o CMakeFiles\EE271_PROJECT_1_PROTOTYPE.dir\game.c.obj -c C:\Users\Zaid\CLionProjects\EE271_Project_1_Prototype\game.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\z434\CLionProjects\EE271_Project_1_Prototype\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/game.c.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/game.c.obj -MF CMakeFiles\EE271_PROJECT_1_PROTOTYPE.dir\game.c.obj.d -o CMakeFiles\EE271_PROJECT_1_PROTOTYPE.dir\game.c.obj -c C:\Users\z434\CLionProjects\EE271_Project_1_Prototype\game.c
 
 CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/game.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/game.c.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Zaid\CLionProjects\EE271_Project_1_Prototype\game.c > CMakeFiles\EE271_PROJECT_1_PROTOTYPE.dir\game.c.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\z434\CLionProjects\EE271_Project_1_Prototype\game.c > CMakeFiles\EE271_PROJECT_1_PROTOTYPE.dir\game.c.i
 
 CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/game.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/game.c.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Zaid\CLionProjects\EE271_Project_1_Prototype\game.c -o CMakeFiles\EE271_PROJECT_1_PROTOTYPE.dir\game.c.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\z434\CLionProjects\EE271_Project_1_Prototype\game.c -o CMakeFiles\EE271_PROJECT_1_PROTOTYPE.dir\game.c.s
 
 # Object files for target EE271_PROJECT_1_PROTOTYPE
 EE271_PROJECT_1_PROTOTYPE_OBJECTS = \
@@ -110,7 +110,7 @@ EE271_PROJECT_1_PROTOTYPE.exe: CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/build.ma
 EE271_PROJECT_1_PROTOTYPE.exe: CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/linklibs.rsp
 EE271_PROJECT_1_PROTOTYPE.exe: CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/objects1.rsp
 EE271_PROJECT_1_PROTOTYPE.exe: CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Zaid\CLionProjects\EE271_Project_1_Prototype\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable EE271_PROJECT_1_PROTOTYPE.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\z434\CLionProjects\EE271_Project_1_Prototype\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable EE271_PROJECT_1_PROTOTYPE.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\EE271_PROJECT_1_PROTOTYPE.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -122,6 +122,6 @@ CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/clean:
 .PHONY : CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/clean
 
 CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Zaid\CLionProjects\EE271_Project_1_Prototype C:\Users\Zaid\CLionProjects\EE271_Project_1_Prototype C:\Users\Zaid\CLionProjects\EE271_Project_1_Prototype\cmake-build-debug C:\Users\Zaid\CLionProjects\EE271_Project_1_Prototype\cmake-build-debug C:\Users\Zaid\CLionProjects\EE271_Project_1_Prototype\cmake-build-debug\CMakeFiles\EE271_PROJECT_1_PROTOTYPE.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\z434\CLionProjects\EE271_Project_1_Prototype C:\Users\z434\CLionProjects\EE271_Project_1_Prototype C:\Users\z434\CLionProjects\EE271_Project_1_Prototype\cmake-build-debug C:\Users\z434\CLionProjects\EE271_Project_1_Prototype\cmake-build-debug C:\Users\z434\CLionProjects\EE271_Project_1_Prototype\cmake-build-debug\CMakeFiles\EE271_PROJECT_1_PROTOTYPE.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/depend
 

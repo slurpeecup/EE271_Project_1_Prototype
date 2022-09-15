@@ -53,10 +53,10 @@ RM = "C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Zaid\CLionProjects\EE271_Project_1_Prototype
+CMAKE_SOURCE_DIR = C:\Users\z434\CLionProjects\EE271_Project_1_Prototype
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Zaid\CLionProjects\EE271_Project_1_Prototype\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\z434\CLionProjects\EE271_Project_1_Prototype\cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -80,14 +80,14 @@ clean: CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/clean
 CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\EE271_PROJECT_1_PROTOTYPE.dir\build.make CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\EE271_PROJECT_1_PROTOTYPE.dir\build.make CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Zaid\CLionProjects\EE271_Project_1_Prototype\cmake-build-debug\CMakeFiles --progress-num=1,2,3 "Built target EE271_PROJECT_1_PROTOTYPE"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\z434\CLionProjects\EE271_Project_1_Prototype\cmake-build-debug\CMakeFiles --progress-num=1,2,3 "Built target EE271_PROJECT_1_PROTOTYPE"
 .PHONY : CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Zaid\CLionProjects\EE271_Project_1_Prototype\cmake-build-debug\CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\z434\CLionProjects\EE271_Project_1_Prototype\cmake-build-debug\CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Zaid\CLionProjects\EE271_Project_1_Prototype\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\z434\CLionProjects\EE271_Project_1_Prototype\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/EE271_PROJECT_1_PROTOTYPE.dir/rule
 
 # Convenience name for target.
